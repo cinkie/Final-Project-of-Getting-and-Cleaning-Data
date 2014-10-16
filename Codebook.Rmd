@@ -1,0 +1,29 @@
+---
+title: "Codebook"
+output: html_document
+---
+
+## 1. Source of Data
+The data comes from UCI Machine Learning Repository(http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). There are 561 variables and 10299 observations in total.
+
+This Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+
+## 2. Original data input
+We read 8 txt raw data files in total to perform data cleaning. They are as follows:
+
+1. X_train.txt
+2. y_train.txt
+3. subject_train.txt
+4. X_test.txt
+5. y_test.txt
+6. subject_test.txt
+7. features.txt
+8. activity_labels.txt
+
+The features(`X`) selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. feature.txt contains the feature name of `X`. activity_labels are the labels for `y`.
+
+## 3. Process of data cleaning
+1. Merge the training data and test data, create the combined data sets `x, y, subject`. Then name the variables and combine these data frames into a new data framd called `data`.
+2. Extract variables that contain mean and standard deviation.
+3. Using the `aggregate` function frm `plyr` package to calculate the average by each subject and activity.
+4. Output the tidy data.
